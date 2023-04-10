@@ -34,7 +34,7 @@
                 </TextBox>
                 <Button Width="100" HorizontalAlignment="Center" Content="Search" Margin="2"></Button>
             </StackPanel>
-        <TextBlock FontWeight="Bold" FontSize="16" TextAlignment="Center" Text="Top 10 Cryptocurrencies"/><!--Change 10 on list size-->
+        <TextBlock FontWeight="Bold" FontSize="16" TextAlignment="Center" Text="Top 10 Cryptocurrencies"/><!--Change "10" on list size-->
         <ListBox Margin="20, 10" BorderThickness="0" >
             <!--ItemsSource="{Binding CurList}"-->
         </ListBox>

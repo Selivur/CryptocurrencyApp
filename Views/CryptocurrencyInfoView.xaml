@@ -12,26 +12,21 @@
         <TextBlock Text="Volume:&#x09;100$"/><!--Binding-->
         <Line Stroke="Black" StrokeThickness="1" X1="0" Y1="10" X2="700" Y2="10" HorizontalAlignment="Center"/>
         <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Markets"/>
-        <ListView ><!--Binding-->
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            <ListViewItem/>
-            
+        <ListView >
+            <!--Binding-->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalAlignment" Value="Stretch"/>
                     <Setter Property="Padding" Value="10"/>
                 </Style>
             </ListView.ItemContainerStyle>
-                
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
 
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </UserControl>
