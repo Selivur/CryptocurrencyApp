@@ -11,6 +11,10 @@ namespace CryptocurrencyApp.Models
 {
     internal class CurrencyInfo
     {
+        public string Name { get; set; }
+        public float Price { get; set; }
+        public float VolumeUsd24Hr { get; set; }
+        public float ChangePercent24Hr { get; set; }
         public CurrencyInfo(string currency)
         {
             string ResponseString = "";
@@ -26,9 +30,6 @@ namespace CryptocurrencyApp.Models
             VolumeUsd24Hr = (float)json["volumeUsd24Hr"];
             ChangePercent24Hr = (float)json["changePercent24Hr"];
         }
-        public string Name { get; set; }
-        public float Price { get; set; }
-        public float VolumeUsd24Hr { get; set; }
-        public float ChangePercent24Hr { get; set; }
+
     }
 }

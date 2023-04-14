@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptocurrencyApp.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"> 
     <StackPanel Margin="20">
-        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="16" Text="CryptoCurName"/><!--Binding-->
-        <TextBlock Text="Price:&#x09;300$"/> <!--Binding-->
-        <TextBlock Text="Volume:&#x09;100$"/><!--Binding-->
+        <TextBlock TextAlignment="Center" FontWeight="Bold" FontSize="16" Text="{Binding Name}"/>
+        <TextBlock Text="{Binding Price}" />
+        <TextBlock Text="{Binding VolumeUsd24Hr}"/>
+        <TextBlock Text="{Binding ChangePercent24Hr}"/>
         <Line Stroke="Black" StrokeThickness="1" X1="0" Y1="10" X2="700" Y2="10" HorizontalAlignment="Center"/>
         <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Markets"/>
         <ListView >
