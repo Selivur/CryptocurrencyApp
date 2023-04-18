@@ -25,7 +25,7 @@ namespace CryptocurrencyApp.Models
             var json = JObject.Parse(ResponseString)["data"];
             for (int i = 0; i < 10; i++)
             {
-                CurrencyList.Add((string)json[i]["id"]);
+                CurrencyList.Add((i+1).ToString()+"\t"+json[i]["id"].ToString());
             }
             return CurrencyList;
         }

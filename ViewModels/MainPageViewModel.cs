@@ -12,7 +12,7 @@ namespace CryptocurrencyApp.ViewModels
     internal class MainPageViewModel : ViewModel
     {
         private List<string> _currencyList = CurrencyTopList.GetList();
-        
+        public List<string> TopList { get { return _currencyList; } }
         public ICommand SearchCommand { get;}
     }
 }
