@@ -19,9 +19,10 @@ namespace CryptocurrencyApp.ViewModels
        
         public string ChangePercent24Hr => "Change:\t"+_currencyData.ChangePercent24Hr.ToString();
 
-        public CryptocurrencyInfoViewModel(CurrencyInfo currencyData)
+        public CryptocurrencyInfoViewModel()
         {
-            _currencyData = currencyData;
+
+            _currencyData = new CurrencyInfo("");
         }
     }
 }
