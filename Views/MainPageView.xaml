@@ -11,7 +11,7 @@
         <ViewModels:MainPageViewModel/>
     </UserControl.DataContext>-->
     <StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20" Height="25">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20" Height="30">
             <TextBox Width="200" VerticalAlignment="Center" Padding="5" Margin="0 0 5 0" Text="{Binding SearchField, UpdateSourceTrigger=PropertyChanged}">
                     <TextBox.Style>
                         <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -36,7 +36,7 @@
                         </Style>
                     </TextBox.Style>
                 </TextBox>
-            <Button Width="100" HorizontalAlignment="Center" Content="Search" Margin="2" Command="{Binding SearchCommand}"></Button>
+            <Button Width="100" HorizontalAlignment="Center" Content="Search" Command="{Binding SearchCommand}"></Button>
             </StackPanel>
         <TextBlock FontWeight="Bold" FontSize="16" TextAlignment="Center" Text="Top 10 Cryptocurrencies"/>
         <ListBox Margin="0, 10, 40, 0" BorderThickness="0" ItemsSource="{Binding TopList}" HorizontalAlignment="Center">
