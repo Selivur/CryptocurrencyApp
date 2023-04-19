@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CryptocurrencyApp.ViewModels.Base
 {
-    internal abstract class ViewModel
+    internal abstract class ViewModel : INotifyPropertyChanged
     {
         public bool HasChanges { get; set; }
 

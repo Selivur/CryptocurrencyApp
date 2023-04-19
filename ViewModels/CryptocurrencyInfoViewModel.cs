@@ -1,4 +1,5 @@
 ﻿using CryptocurrencyApp.Models;
+using CryptocurrencyApp.Stores;
 using CryptocurrencyApp.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,7 @@ namespace CryptocurrencyApp.ViewModels
 
         public CryptocurrencyInfoViewModel()
         {
-
-            _currencyData = new CurrencyInfo("");
+            _currencyData = new CurrencyInfo(MainPageViewModel.GetSearchField());
         }
     }
 }
