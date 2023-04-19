@@ -22,7 +22,7 @@ namespace CryptocurrencyApp
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            _navigationStore.CurrentViewModel =new CryptocurrencyInfoViewModel();
+            _navigationStore.CurrentViewModel =new MainPageViewModel(_navigationStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainViewModel(_navigationStore)

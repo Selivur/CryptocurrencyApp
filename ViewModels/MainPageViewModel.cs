@@ -1,4 +1,6 @@
 ﻿using CryptocurrencyApp.Models;
+using CryptocurrencyApp.Models.Commands;
+using CryptocurrencyApp.Stores;
 using CryptocurrencyApp.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -37,5 +39,9 @@ namespace CryptocurrencyApp.ViewModels
             return _searchField;
         }
         public ICommand SearchCommand { get;}
+        public MainPageViewModel(NavigationStore navigationStore)
+        {
+            SearchCommand = new SearchCommand(navigationStore); 
+        }
     }
 }
