@@ -18,7 +18,7 @@ namespace CryptocurrencyApp.Models
         public CurrencyInfo(string currency)
         {
             string ResponseString = "";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.coincap.io/v2/assets"+currency);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.coincap.io/v2/assets/"+currency);
             request.Method = "GET";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             var stream = response.GetResponseStream();

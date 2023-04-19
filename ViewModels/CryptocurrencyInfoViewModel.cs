@@ -22,7 +22,7 @@ namespace CryptocurrencyApp.ViewModels
         public CryptocurrencyInfoViewModel()
         {
 
-            _currencyData = new CurrencyInfo("");
+            _currencyData = new CurrencyInfo("bitcoin");
         }
     }
 }

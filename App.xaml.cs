@@ -1,4 +1,5 @@
-﻿using CryptocurrencyApp.ViewModels;
+﻿using CryptocurrencyApp.Stores;
+using CryptocurrencyApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,11 +15,17 @@ namespace CryptocurrencyApp
     /// </summary>
     public partial class App : Application
     {
+        private readonly NavigationStore _navigationStore;
+        public App()
+        {
+            _navigationStore= new NavigationStore();
+        }
         protected override void OnStartup(StartupEventArgs e)
         {
+            _navigationStore.CurrentViewModel =new CryptocurrencyInfoViewModel();
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
             base.OnStartup(e);

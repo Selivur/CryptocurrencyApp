@@ -1,4 +1,5 @@
-﻿using CryptocurrencyApp.ViewModels.Base;
+﻿using CryptocurrencyApp.Stores;
+using CryptocurrencyApp.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace CryptocurrencyApp.ViewModels
 {
     class MainViewModel : ViewModel
     {
-        public ViewModel CurrentViewModel { get; }
-        public MainViewModel() 
+        private readonly NavigationStore _navigationStore;
+        public ViewModel CurrentViewModel => _navigationStore.CurrentViewModel;
+        public MainViewModel(NavigationStore navigationStore)
         {
-            CurrentViewModel = new MainPageViewModel();
-        }  
+            _navigationStore = navigationStore;
+        }
     }
 }
