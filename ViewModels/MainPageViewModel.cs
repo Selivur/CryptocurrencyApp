@@ -30,6 +30,17 @@ namespace CryptocurrencyApp.ViewModels
                 OnPropertyChanged();
             }
         }
+        private string _selectedItemName;
+        public string SelectedItemName
+        {
+            get => _selectedItemName;
+            set 
+            {
+                _selectedItemName= value;
+                SearchField= _selectedItemName;
+                OnPropertyChanged(); 
+            }
+        }
 
         public static string GetSearchField()
         {
