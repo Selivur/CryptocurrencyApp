@@ -10,11 +10,11 @@ using System.IO;
 
 namespace CryptocurrencyApp.Models
 {
-    internal static class CurrencyTopList
+    internal class CurrencyList
     {
-        public static List<string> GetList()
+        private static List<string> CryptocurrencyList = new List<string>(); 
+        public CurrencyList()
         {
-            List<string> CurrencyList = new List<string>();
             string ResponseString = "";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.coincap.io/v2/assets");
             request.Method = "GET";
@@ -23,13 +23,22 @@ namespace CryptocurrencyApp.Models
             if (stream != null) 
                 ResponseString = new StreamReader(stream).ReadToEnd();
             var json = JObject.Parse(ResponseString)["data"];
-            for (int i = 0; i < 10; i++)
-            {
-                CurrencyList.Add((i+1).ToString()+"\t"+json[i]["id"].ToString());
-            }
-            return CurrencyList;
+            foreach ( var item in json)
+                CryptocurrencyList.Add(item["id"].ToString());
+            
         }
-
+        public static List<string> GetList()
+        {
+            return CryptocurrencyList;
+        }
+        public static bool Contains(string value)
+        {
+            return CryptocurrencyList.Contains(value);
+        }
+        public List<string> GetTop10Currency()
+        {
+            return CryptocurrencyList.Take(10).ToList();
+        }
 
     }
 }

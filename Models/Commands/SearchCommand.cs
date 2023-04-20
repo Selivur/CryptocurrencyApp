@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CryptocurrencyApp.Models.Commands
 {
@@ -17,7 +18,10 @@ namespace CryptocurrencyApp.Models.Commands
         }
         public override void Execute(object parametr)
         {
-            _navigationStore.CurrentViewModel = new CryptocurrencyInfoViewModel();
+            if(CurrencyList.Contains(MainPageViewModel.GetSearchField()))
+                _navigationStore.CurrentViewModel = new CryptocurrencyInfoViewModel();
+            else
+                MessageBox.Show("Invalid name of cryptocurrency", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
