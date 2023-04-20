@@ -1,4 +1,5 @@
 ﻿using CryptocurrencyApp.Models;
+using CryptocurrencyApp.Models.Commands;
 using CryptocurrencyApp.Stores;
 using CryptocurrencyApp.ViewModels.Base;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CryptocurrencyApp.ViewModels
 {
@@ -24,10 +26,12 @@ namespace CryptocurrencyApp.ViewModels
         {
             get => _marketsList;
         }
-        public CryptocurrencyInfoViewModel()
+        public ICommand OnMainCommand { get;}
+        public CryptocurrencyInfoViewModel(NavigationStore _navigationStore)
         {
             _currencyData = new CurrencyInfo(MainPageViewModel.GetSearchField());
             new CurrencyMarket(MainPageViewModel.GetSearchField());
+            OnMainCommand = new NavigateOnMainCommand(_navigationStore);
         }
     }
 }

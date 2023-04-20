@@ -9,19 +9,16 @@ using System.Windows;
 
 namespace CryptocurrencyApp.Models.Commands
 {
-    internal class SearchCommand : CommandBase
+    internal class NavigateOnMainCommand : CommandBase
     {
         private readonly NavigationStore _navigationStore;
-        public SearchCommand(NavigationStore navigationStore)
+        public NavigateOnMainCommand(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
         }
         public override void Execute(object parametr)
         {
-            if(CurrencyList.Contains(MainPageViewModel.GetSearchField()))
-                _navigationStore.CurrentViewModel = new CryptocurrencyInfoViewModel(_navigationStore);
-            else
-                MessageBox.Show("Invalid name of cryptocurrency", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            _navigationStore.CurrentViewModel = new MainPageViewModel(_navigationStore);
         }
     }
 }

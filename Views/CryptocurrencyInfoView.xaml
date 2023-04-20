@@ -27,6 +27,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
-        <Button Margin="10" Padding="10, 5" HorizontalAlignment="Right" Content="Back" BorderThickness="0"/>
+        <Button Margin="10" Padding="10, 5" HorizontalAlignment="Right" Content="Back" BorderThickness="0" Command="{Binding OnMainCommand}"/>
     </StackPanel>
 </UserControl>
