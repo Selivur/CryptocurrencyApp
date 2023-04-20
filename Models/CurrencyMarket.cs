@@ -16,6 +16,7 @@ namespace CryptocurrencyApp.Models
         public string Price { get; set; }
         public CurrencyMarket(string currency)
         {
+            CurrencyMarkets.Clear();
             string ResponseString = "";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.coincap.io/v2/assets/" + currency+"/markets");
             request.Method = "GET";
