@@ -33,7 +33,6 @@ namespace CryptocurrencyApp.ViewModels
 
         public static string GetSearchField()
         {
-            //if (CurrencyList.GetList().Contains(_searchField))
                 return _searchField;
         }
         public ICommand SearchCommand { get;}

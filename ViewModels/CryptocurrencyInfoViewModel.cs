@@ -19,10 +19,15 @@ namespace CryptocurrencyApp.ViewModels
         public string VolumeUsd24Hr => "Volume:\t"+_currencyData.VolumeUsd24Hr.ToString();
        
         public string ChangePercent24Hr => "Change:\t"+_currencyData.ChangePercent24Hr.ToString();
-
+        public List<CurrencyMarket> _marketsList=CurrencyMarket.CurrencyMarkets;
+        public List<CurrencyMarket> MarketsList
+        {
+            get => _marketsList;
+        }
         public CryptocurrencyInfoViewModel()
         {
             _currencyData = new CurrencyInfo(MainPageViewModel.GetSearchField());
+            new CurrencyMarket(MainPageViewModel.GetSearchField());
         }
     }
 }

@@ -19,21 +19,14 @@
         <TextBlock Text="{Binding ChangePercent24Hr}"/>
         <Line Stroke="Black" StrokeThickness="1" X1="0" Y1="10" X2="700" Y2="10" HorizontalAlignment="Center"/>
         <TextBlock TextAlignment="Center" FontWeight="Bold" Text="Markets"/>
-        <ListView >
-            <!--Binding-->
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                    <Setter Property="Padding" Value="10"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Name</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ScrollViewer Height="200">
+            <DataGrid ColumnWidth="*" BorderThickness="0" ItemsSource="{Binding MarketsList}" HorizontalAlignment="Center" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Market" Binding="{Binding Market}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <Button Margin="10" Padding="10, 5" HorizontalAlignment="Right" Content="Back" BorderThickness="0"/>
     </StackPanel>
 </UserControl>
